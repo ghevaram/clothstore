@@ -29,8 +29,21 @@
 				wp_nav_menu(array('theme_location' => 'primary-menu', 'menu_class' => 'nav'))
 					?>
 			</div>
+
 			<div class="shopping_cart">
 				<span class="material-symbols-outlined"> shopping_cart </span>
 			</div>
 		</div>
 	</section>
+	<div style="display: flex; justify-content: center" class="menu-toggle" id="menuToggle">
+		<span class="material-symbols-outlined">menu</span>
+	</div>
+
+	<script>
+		document
+			.getElementById("menuToggle")
+			.addEventListener("click", function () {
+				var navbarSection = document.querySelector(".navbar-section");
+				navbarSection.classList.toggle("active");
+			});
+	</script>

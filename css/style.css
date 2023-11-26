@@ -23,6 +23,10 @@ body {
   justify-content: center;
 }
 
+.menu-toggle {
+  cursor: pointer;
+}
+
 .nav-links-div ul {
   padding: 0;
   font-family: Montserrat;
@@ -69,11 +73,11 @@ body {
 }
 
 .card {
-  padding: 0px 0 10px 0;
+  padding: 0px 0 5px 0;
     background: #ffffff;
     display: flex;
-    height: 340px;
-    width: 295px;
+    /* height: 340px;
+    width: 295px; */
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
@@ -115,12 +119,13 @@ body {
 }
 
 .cart-div {
-  margin-left: 140px;
-  margin-top: -15px;
-  color: white;
-  display: flex;
-  background: #1eb089;
-  padding: 4px;
+  bottom: 15px;
+    position: relative;
+    left: 70px;
+    color: white;
+    display: flex;
+    background: #1eb089;
+    padding: 4px;
 }
 
 .color_p_div {
@@ -156,10 +161,9 @@ body {
 }
 
 footer{
-    height: 515px;
     color: #eaf1f2;
     background-color: black;
-    padding: 10px;
+    padding: 25px;
 }
 
 .main-footer-div{
@@ -167,7 +171,6 @@ footer{
 }
 
 .div-1{
-  padding: 4%;
   display: flex;
   width: 40%;
   flex-direction: column;
@@ -204,14 +207,13 @@ footer{
 
   .newsletter-input-btn input{
     padding: 0 20px;
-     width: 620px;
-     height: 50px;
+    width: -webkit-fill-available;
+     padding: 17px;
      border: none;
   }
 
   .newsletter-input-btn button{
-    width: 202px;
-    height: 50px;
+    padding: 17px;
     border: none;
     color: white;
     background-color: #1eb089;
@@ -225,7 +227,6 @@ footer{
   .div-2{
     display: flex;
     gap: 90px;
-    padding: 2%;
     flex-direction: column;
   }
 
@@ -262,9 +263,41 @@ footer{
 
 
   /* Media Queries */
+  
+@media screen and (max-width: 768px) {
+  .navbar-section {
+    display: none;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .navbar-section.active {
+    display: block;
+    max-height: 500px; 
+  }
+  .menu-toggle {
+    display: block;
+  }
+  
+}
+
+@media screen and (min-width: 768px) and (max-width: 1600px) {
+  .menu-toggle span{
+    display: none;
+  }
+}
+
+
   @media only screen and (max-width: 768px) {
     .main-navbar-div {
+      gap: 0;
       flex-direction: column;
+    }
+
+    .navbar-section{
+      display: flex;
+      justify-content: center;
     }
   
     .nav-links-div ul {
@@ -300,9 +333,9 @@ footer{
       display: none;
     }
   
-    .main-container-latest-blog {
+    /* .main-container-latest-blog {
       flex-direction: column;
-    }
+    } */
   
     .div-1,
     .div-2 {
@@ -315,22 +348,22 @@ footer{
     }
   
     .footer-links-div {
-      flex-direction: column;
       gap: 20px;
     }
   
-    .newsletter-input-btn input,
+    /* .newsletter-input-btn input,
     .newsletter-input-btn button {
       width: 100%;
+    } */
+    .div-1 {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
     }
   }
   
-  /* Responsive styles for even smaller screens */
-  
   @media only screen and (max-width: 480px) {
-    .main-navbar-div {
-      gap: 20px;
-    }
   
     .nav-links-div ul {
       gap: 10px;
@@ -378,5 +411,67 @@ footer{
     }
   }
 
+  @media screen and (max-width:780px) {
+    .ads-section {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 2px;
+  }
+  .ads-section img {
+    width: 100%;
+}
+  }
 
+@media screen and (min-width: 770px) and (max-width: 856px){
+  .cart-div {
+      left: 50px;
+  }
+}
 
+@media screen and (max-width: 770px){
+  .cart-div {
+    left: 80px;
+}
+}
+
+@media screen and (min-width: 480px) and (max-width: 540px){
+  .cart-div {
+    left: 60px;
+}
+}
+
+@media screen and (max-width: 700px){
+  .main-footer-div {
+    display: flex;
+    flex-direction: column;
+}
+.footer-links-div {
+  flex-direction: row;
+}
+.div-1 img{
+  width: 30%;
+}
+.main-container-latest-blog{
+  flex-direction: column;
+}
+.main-container-latest-blog div{
+  width: auto !important;
+}
+}
+
+@media screen and (max-width: 500px){
+  .footer-links-div {
+    flex-wrap: wrap;
+  }
+  .main-footer-div {
+    font-size: 12px;
+  }
+
+  .footer-links{
+    font-size: 10px;
+  }
+  .copyright-div p{
+    font-size: 8px
+  }
+}
